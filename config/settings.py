@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     # Local apps
     'projects',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +129,10 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
@@ -136,13 +141,5 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-SITE_ID = 1
-
-LOGIN_REDIRECT_URL = '/'
-ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
-
-# Optional: ایمیل به عنوان نام کاربری
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_VERIFICATION = 'none'  # برای تست، بعداً می‌تونی بذاری mandatory
+# accounts config
+AUTH_USER_MODEL = 'accounts.CustomUser'
